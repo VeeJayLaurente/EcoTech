@@ -2,10 +2,10 @@
 EcoTech Mobile App.
 
 # Features
-* Share Projects
-* Message other developers
-* Rate others work
-* Search other developers
+* Sync Pad
+* Dashboard 
+* Plant Stats
+* EcoStore
 
 # Course Overview
 * Basic React Native Components
@@ -17,7 +17,7 @@ EcoTech Mobile App.
 * React Native
 * Tailwind CSS
 * AppWrite
-* HTML, CSS and JS
+* JS
 
 # Home Screen
 <img src="assets/images/screenshot/onboarding.png">  
