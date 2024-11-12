@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Image, Modal } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Image, Modal, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons } from '@expo/vector-icons'; 
-import { Link } from 'expo-router';
+import { Ionicons, FontAwesome} from '@expo/vector-icons'; 
+
 
 const Home = () => {
   const navigation = useNavigation();
@@ -14,20 +14,27 @@ const Home = () => {
     navigation.navigate(section);
   };
 
+  const showTutorial = () => {
+    Alert.alert(
+      "Dashboard Tutorial",
+      "Welcome to the dashboard! \n\n- Use the 'Plant Stat' feature to analyze your plant's health. \n- Check real-time plant data on soil moisture, temperature, and more.\n- Use the sidebar for quick navigation to different sections for your EcoHub and EcoStore.",
+      [{ text: "Got it!" }]
+    );
+  };
+
   // Function to toggle the light status
   const toggleLightStatus = () => {
     setLightStatus((prevStatus) => (prevStatus === 'On' ? 'Off' : 'On'));
   };
 
   return (
-    <View className="flex-1 bg-[#F0F8F5] px-4 py-8">
+    <View className="flex-1 bg-[#F0F8F5] px-4 py-8 top-5">
+
       {/* Header Section */}
       <View className="flex-row justify-between items-center mb-6">
         <Text className="text-2xl font-bold text-[#0C9359]">Hello, Veej🌿</Text>
-        <TouchableOpacity onPress={() => handleSectionPress('Settings')}>
-          <Link href = "/Ecohub">
+        <TouchableOpacity onPress={() => handleSectionPress('Ecohub')}>
           <Ionicons name="settings" size={24} color="#0C9359" />
-          </Link>
         </TouchableOpacity>
       </View>
 
@@ -82,7 +89,7 @@ const Home = () => {
             className="w-[48%] bg-white p-4 rounded-lg shadow-lg mb-4">
             <Text className="text-sm text-gray-500">Nutrient Level</Text>
             <Text className="text-lg font-bold text-[#0C9359]">5 grams left</Text>
-            <Text className="text-xs text-gray-500">Refill in 2 days</Text>
+            <Text className="text-xs text-gray-500">Refill Plant Pod in 2 days</Text>
           </TouchableOpacity>
 
           {/* Status */}
@@ -90,7 +97,7 @@ const Home = () => {
             className="w-[48%] bg-white p-4 rounded-lg shadow-lg mb-4">
             <Text className="text-sm text-gray-500">Status</Text>
             <Text className="text-lg font-bold text-[#0C9359]">4 plants growing</Text>
-            <Text className="text-xs text-gray-500">Next harvest in 3 days</Text>
+            <Text className="text-xs text-gray-500">Expected harvest in 3 days</Text>
           </TouchableOpacity>
 
           {/* Light Status */}
@@ -138,6 +145,13 @@ const Home = () => {
           </View>
         </View>
       </Modal>
+        {/* Floating Info Icon */}
+        <TouchableOpacity
+        className ='absolute bottom-10 right-5 bg-[#0C9359] p-4 rounded-full'
+        onPress={showTutorial}
+      >
+        <FontAwesome name="info-circle" size={28} color="white" />
+      </TouchableOpacity>
     </View>
   );
 };

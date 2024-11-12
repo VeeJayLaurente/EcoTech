@@ -19,7 +19,7 @@ module.exports = {
       },
       fontFamily:{
         rblack:["Roboto-Black", "sans-serif"],
-        otin:["Roboto-Thin", "sans-serif"],
+        benis:["Roboto-Thin", "sans-serif"],
         danilo:["Roboto-Light", "sans-serif"],
         jesus:["impact"],
         nestor:["BAHNSCHRIFT"],

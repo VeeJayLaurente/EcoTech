@@ -5,9 +5,12 @@ import { Link } from 'expo-router';
 
 const Ecohub = () => {
   const [credentials, setCredentials] = useState({
-    email: 'veej@example.com',
+    email: 'veejaylaurente@gmail.com',
     username: 'Veej',
-    id: '12345',
+    id: '12901883',
+    address: 'Toledo City, Cebu',
+    contactnumber: '09565378644',
+    Github: 'https://github.com/VeeJayLaurente'
   });
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -46,6 +49,22 @@ const Ecohub = () => {
           <Text className="text-lg font-bold">I.D</Text>
           <Text className="text-gray-500">{credentials.id}</Text>
         </View>
+
+        <View className="mb-4">
+          <Text className="text-lg font-bold">Address</Text>
+          <Text className="text-gray-500">{credentials.address}</Text>
+        </View>
+
+        <View className="mb-4">
+          <Text className="text-lg font-bold">Contact Number</Text>
+          <Text className="text-gray-500">{credentials.contactnumber}</Text>
+        </View>
+
+        <View className="mb-4">
+          <Text className="text-lg font-bold">Github</Text>
+          <Text className="text-gray-500">{credentials.Github}</Text>
+        </View>
+
       </View>
 
       {/* Edit Profile Button */}

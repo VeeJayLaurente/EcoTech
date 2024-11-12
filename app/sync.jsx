@@ -66,7 +66,7 @@ const Sync = () => {
 
       {/* Continue Button */}
       <TouchableOpacity className="bg-white rounded-lg py-3 mt-6">
-        <Link href ="./home" className="text-[#0C9359] text-center text-base font-semibold">
+        <Link href ="/home" className="text-[#0C9359] text-center text-base font-semibold">
           Continue
         </Link>
       </TouchableOpacity>
