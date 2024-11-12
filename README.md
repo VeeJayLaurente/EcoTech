@@ -1,5 +1,5 @@
-# TechFolio Hub
-TechFolio Mobile App.
+# EcoTech App
+EcoTech Mobile App.
 
 # Features
 * Share Projects
@@ -15,6 +15,7 @@ TechFolio Mobile App.
 
 # Tech Stack
 * React Native
+* Tailwind CSS
 * AppWrite
 * HTML, CSS and JS
 
