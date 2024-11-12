@@ -1,13 +1,17 @@
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React, { useState } from 'react';
 import { Link } from 'expo-router';
+import {FontAwesome} from '@expo/vector-icons'
+import FormField from '../../components/FormField';
 
 
 const name = () => {
-  const [inputName, setInputName] = useState('');
+  const [form, setForm] = useState({
+    name: ''
+  });
 
   const handleContinue = () => {
-    setName(inputName); 
+    setForm(inputName); 
   };
 
   return (
@@ -23,22 +27,21 @@ const name = () => {
           What can we call you? Could be your name, a nickname or something funny 🍃.
         </Text>
 
-        <View className="border-b border-white flex-row items-center mb-6">
-          <Image 
-            source={require('../assets/icons/profile.png')} 
-            className="w-5 h-5 mr-2"
+        <View className=" w-full items-center mb-5">
+          <View className ="absolute top-[20px] left-8">
+            <FontAwesome name="user" size={25} color="white"/>
+          </View>
+          <FormField
+            title="Name"
+            value ={form.name}
+            handleChangeText={(e) => setForm({ ...form, name: e })}
+            otherStyles="mt-5"
           />
-          <TextInput
-            placeholder="Name"
-            placeholderTextColor="#fff"
-            className="text-white p-2 flex-1"
-            value={inputName}
-            onChangeText={setInputName}  
-          />
+          
         </View>
 
         <TouchableOpacity className="bg-white rounded-lg py-3" onPress={handleContinue}>
-          <Link href="./sync" className="text-[#0C9359] text-center text-base font-semibold">Continue</Link>
+          <Link href="/EcoMode" className="text-[#0C9359] text-center text-base font-semibold">Continue</Link>
         </TouchableOpacity>
       </View>
     </View>

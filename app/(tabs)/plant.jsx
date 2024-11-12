@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity, FlatList, Image } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, Image, Alert } from 'react-native';
 import React, { useState } from 'react';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome} from '@expo/vector-icons';
 
 const Plant = () => {
   const [activeTab, setActiveTab] = useState('PLANTS');
@@ -24,6 +24,14 @@ const Plant = () => {
     { id: '3', title: 'Cycle Settings', value: '', icon: require('../../assets/icons/clock.png') },
     { id: '4', title: 'EcoTech Sync Settings', value: '', icon: require('../../assets/icons/sync.png') },
   ];
+
+  const showTutorial = () => {
+    Alert.alert(
+      "Dashboard Tutorial",
+      "Welcome to the dashboard! \n\n- Use the 'Plant Stat' feature to analyze your plant's health. \n- Check real-time plant data on soil moisture, temperature, and more.\n- Use the sidebar for quick navigation to different sections for your EcoHub and EcoStore.",
+      [{ text: "Got it!" }]
+    );
+  };
 
   const renderContent = () => {
     switch (activeTab) {
@@ -105,7 +113,7 @@ const Plant = () => {
   };
 
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 bg-white top-5">
       {/* Garden Overview Section */}
       <View className="mb-6">
         <Image
@@ -146,6 +154,15 @@ const Plant = () => {
         </TouchableOpacity>
       </View>
       {renderContent()}
+
+        {/* Floating Info Icon */}
+        <TouchableOpacity
+        className ='absolute bottom-10 right-5 bg-[#0C9359] p-4 rounded-full'
+        onPress={showTutorial}
+      >
+        <FontAwesome name="info-circle" size={28} color="white" />
+      </TouchableOpacity>
+
     </View>
   );
 };

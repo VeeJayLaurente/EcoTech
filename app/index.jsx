@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, Image } from 'react-native';
-import { Link } from 'expo-router';
+import { Text, View, Image} from 'react-native';
+import { router } from 'expo-router';
+import CustomButton from '../components/CustomButtons';
 
 export default function App() {
   return (
-    <View className="flex-1 justify-start items-center bg-[#0C9359] pt-12 relative px-6">
+    <View className="flex-1 justify-start items-center bg-[#0C9359] pt-12 relative px-6 ">
+      <View className ="top-20 items-center">
       {/* Background Circles */}
-      <View className="absolute top-[-40px] left-[-320px] w-circle-size h-circle-size rounded-circle border-circle border-circle-border-light" />
+      <View className="absolute top-[-120px] left-[-320px] w-circle-size h-circle-size rounded-circle border-circle border-circle-border-light" />
       <View className="absolute bottom-[-100px] right-[-250px] w-circle-size h-circle-size rounded-circle border-circle border-circle-border-light" />
       <View className="absolute top-[-130px] right-[-320px] w-circle-size h-circle-size rounded-circle border-circle border-circle-border-strong" />
       <View className="absolute top-[400px] left-[-200px] w-circle-size h-circle-size rounded-circle border-circle border-circle-border-medium" />
@@ -18,20 +19,21 @@ export default function App() {
       </Text>
 
       {/* Register Button */}
-      <Link
-        href="./register"
-        className="text-2xl font-nestor text-black mt-8 bg-white px-12 py-3 rounded-full shadow-lg hover:bg-[#0C9359] hover:text-white transition-all duration-300 ease-in-out">
-        Register
-      </Link>
+      <CustomButton 
+      title ="Login"
+      containerStyles= "mt-4 items-center"
+      handlePress={()=> router.push('/login')}
+      >
+      </CustomButton>
 
-      {/* Login Button */}
-      <Link
-        href="./login"
-        className="text-2xl font-nestor text-black mt-4 border-2 border-black px-12 py-3 rounded-full shadow-lg hover:bg-[#0C9359] hover:text-white transition-all duration-300 ease-in-out">
-        Login
-      </Link>
+      <CustomButton 
+      title ="Register"
+      containerStyles= "mt-4 items-center"
+      handlePress={()=> router.push('/register')}
+      >
+      </CustomButton>
 
-      <StatusBar style="auto" />
+      </View>
     </View>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Image} from 'react-native'
 import {Tabs} from 'expo-router'
-import { home, plant, profile } from '../../assets/constants/icons';
+import { home, plant, profile } from '../../constants/icons';
 
 
 const TabIcon =({icon, color, name, focused}) => {
@@ -20,6 +20,7 @@ const TabIcon =({icon, color, name, focused}) => {
 
 const TabLayout = () => {
   return (
+    <>
         <Tabs>
             <Tabs.Screen
             name="home"
@@ -35,7 +36,8 @@ const TabLayout = () => {
 
                 )
             }}
-            /> //End of Home Icon
+            /> 
+
             <Tabs.Screen
             name="plant"
             options ={{
@@ -49,9 +51,9 @@ const TabLayout = () => {
                     />
                 )
             }}
-            /> //End of Plant Icon
+            /> 
 
-<Tabs.Screen
+            <Tabs.Screen
             name="profile"
             options ={{
                 title: 'Profile',
@@ -64,10 +66,10 @@ const TabLayout = () => {
                     />
                 ),
             }}
-            /> //End of Profile Icon
-
-    </Tabs>
-  )
-}
+            /> 
+        </Tabs>
+    </>
+  );
+};
 
 export default TabLayout

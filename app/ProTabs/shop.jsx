@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, FlatList, Image, Modal } from 'react-native';
+import { Ionicons} from '@expo/vector-icons';
+import { Link } from 'expo-router';
 
 const Shop = () => {
   const [selectedProduct, setSelectedProduct] = useState(null); // Track selected product
@@ -9,42 +11,42 @@ const Shop = () => {
       id: 1, 
       name: 'Oregano', 
       price: '$25', 
-      image: require('../assets/icons/oregano.png'),
+      image: require('../../assets/icons/oregano.png'),
       description: 'Oregano is a popular herb known for its strong flavor, often used in Italian cuisine.'
     },
     { 
       id: 2, 
       name: 'Lemon Balm', 
       price: '$30', 
-      image: require('../assets/icons/lemonbalm.png'),
+      image: require('../../assets/icons/lemonbalm.png'),
       description: 'Lemon Balm is a fragrant herb known for its lemon scent and calming properties.'
     },
     { 
       id: 3, 
       name: 'Basil', 
       price: '$15', 
-      image: require('../assets/icons/basil.png'),
+      image: require('../../assets/icons/basil.png'),
       description: 'Basil is a key ingredient in many dishes, especially in Mediterranean cooking.'
     },
     { 
       id: 4, 
       name: 'Thyme', 
       price: '$20', 
-      image: require('../assets/icons/thyme.png'),
+      image: require('../../assets/icons/thyme.png'),
       description: 'Thyme adds depth of flavor to soups, stews, and meats.'
     },
     { 
       id: 5, 
       name: 'Mint', 
       price: '$10', 
-      image: require('../assets/icons/mint.png'),
+      image: require('../../assets/icons/mint.png'),
       description: 'Mint is refreshing and often used in beverages, desserts, and salads.'
     },
     { 
       id: 6, 
       name: 'Rosemary', 
       price: '$18', 
-      image: require('../assets/icons/rosemary.png'),
+      image: require('../../assets/icons/rosemary.png'),
       description: 'Rosemary is an aromatic herb that pairs well with roasted meats and vegetables.'
     },
     // Add more products here
@@ -74,6 +76,14 @@ const Shop = () => {
 
   return (
     <View className="flex-1 bg-[#E6FAF0]">
+       {/* Go Back Button */}
+       <TouchableOpacity className="flex-row items-center bg-white p-3 rounded-full mb-5 shadow-md w-[40%]" style={{ alignSelf: 'flex-start' }}>
+        <Ionicons name="chevron-back" size={24} color="#0C9359" />
+        <Link href="/profile" className="text-lg font-bold text-[#0C9359] ml-2">
+          Go Back
+        </Link>
+      </TouchableOpacity>
+
       <FlatList
         data={productList}
         renderItem={renderProduct}

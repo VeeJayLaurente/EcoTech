@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Modal, Linking } from 'react-native';
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity, Modal, Linking, Alert } from 'react-native';
+import { Ionicons, MaterialIcons, FontAwesome} from '@expo/vector-icons';
 import { Link } from 'expo-router';
 
 const Profile = () => {
@@ -39,8 +39,24 @@ const Profile = () => {
     setModalVisible(false);
   };
 
+  const showTutorial = () => {
+    Alert.alert(
+      "Dashboard Tutorial",
+      "Welcome to the dashboard! \n\n- Use the 'Plant Stat' feature to analyze your plant's health. \n- Check real-time plant data on soil moisture, temperature, and more.\n- Use the sidebar for quick navigation to different sections for your EcoHub and EcoStore.",
+      [{ text: "Got it!" }]
+    );
+  };
+
   return (
-    <View className="flex-1 bg-[#E6FAF0] p-5">
+    <View className="flex-1 bg-[#E6FAF0] p-5 top-5">
+      {/* Go Back Button */}
+      <TouchableOpacity className="flex-row items-center bg-white p-3 rounded-full mb-5 shadow-md w-[30%]" style={{ alignSelf: 'flex-start' }}>
+        <Ionicons name="chevron-back" size={24} color="#0C9359" />
+        <Link href="/home" className="text-lg font-bold text-[#0C9359] ml-2">
+          Go Back
+        </Link>
+      </TouchableOpacity>
+
       {/* Profile Header */}
       <View className="mb-5">
         <Text className="text-3xl font-bold">Hey, Veej 🌱</Text>
@@ -144,6 +160,15 @@ const Profile = () => {
           </View>
         </View>
       </Modal>
+
+      {/* Floating Info Icon */}
+      <TouchableOpacity
+        className ='absolute bottom-10 right-5 bg-[#0C9359] p-4 rounded-full'
+        onPress={showTutorial}
+      >
+        <FontAwesome name="info-circle" size={28} color="white" />
+      </TouchableOpacity>
+      
     </View>
   );
 };
