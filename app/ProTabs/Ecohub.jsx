@@ -22,7 +22,7 @@ const Ecohub = () => {
   };
 
   return (
-    <View className="flex-1 bg-[#E6FAF0] p-5">
+    <View className="flex-1 bg-[#E6FAF0] p-10">
       {/* Header */}
       <View className="mb-5">
         <Text className="text-3xl font-bold">EcoHub 🌿</Text>

@@ -1,7 +1,6 @@
 import { View, Text, TextInput, TouchableOpacity, Image} from 'react-native'
 import React, {useState} from 'react'
 import images from '../constants/images';
-import { FontAwesome } from '@expo/vector-icons';
 
 const FormField = ({title, value, placeHolder, handleChangeText, otherStyles,...props}) => {
   const [showPassword, setShowPassword] = useState(false);

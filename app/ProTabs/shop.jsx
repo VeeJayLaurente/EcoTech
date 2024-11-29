@@ -77,7 +77,7 @@ const Shop = () => {
   return (
     <View className="flex-1 bg-[#E6FAF0]">
        {/* Go Back Button */}
-       <TouchableOpacity className="flex-row items-center bg-white p-3 rounded-full mb-5 shadow-md w-[40%]" style={{ alignSelf: 'flex-start' }}>
+       <TouchableOpacity className="flex-row items-center bg-white p-3 mb-5 rounded-full shadow-md w-[40%] top-8" style={{ alignSelf: 'flex-start' }}>
         <Ionicons name="chevron-back" size={24} color="#0C9359" />
         <Link href="/profile" className="text-lg font-bold text-[#0C9359] ml-2">
           Go Back

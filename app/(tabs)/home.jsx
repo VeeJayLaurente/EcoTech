@@ -1,18 +1,14 @@
 
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, Image, Modal, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {Link} from 'expo-router'
 import { Ionicons, FontAwesome} from '@expo/vector-icons'; 
 
 
 const Home = () => {
-  const navigation = useNavigation();
   const [lightStatus, setLightStatus] = useState('On'); // Light status state
   const [isModalVisible, setModalVisible] = useState(false); // Modal visibility state
 
-  const handleSectionPress = (section) => {
-    navigation.navigate(section);
-  };
 
   const showTutorial = () => {
     Alert.alert(
@@ -33,9 +29,9 @@ const Home = () => {
       {/* Header Section */}
       <View className="flex-row justify-between items-center mb-6">
         <Text className="text-2xl font-bold text-[#0C9359]">Hello, Veej🌿</Text>
-        <TouchableOpacity onPress={() => handleSectionPress('Ecohub')}>
+        <Link href ="/ProTabs/Ecohub">
           <Ionicons name="settings" size={24} color="#0C9359" />
-        </TouchableOpacity>
+        </Link>
       </View>
 
       {/* Garden Overview Section */}

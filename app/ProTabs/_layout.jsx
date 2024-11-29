@@ -12,11 +12,6 @@ const _layout = () => {
       />
 
     <Stack.Screen 
-      name="sync" 
-      options = {{headerShown: false}}
-      />
-
-    <Stack.Screen 
       name="Ecohub" 
       options = {{headerShown: false}}
       />

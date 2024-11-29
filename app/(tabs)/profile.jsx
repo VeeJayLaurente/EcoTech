@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, Linking, Alert } from 'react-native';
 import { Ionicons, MaterialIcons, FontAwesome} from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 
 const Profile = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -61,7 +61,7 @@ const Profile = () => {
       <View className="mb-5">
         <Text className="text-3xl font-bold">Hey, Veej 🌱</Text>
         <TouchableOpacity className="absolute top-0 right-0">
-          <Link href = "/Ecohub">
+          <Link href = "/ProTabs/Ecohub">
           <Ionicons name="create-outline" size={30} color="green" />
           </Link>
         </TouchableOpacity>
@@ -72,10 +72,10 @@ const Profile = () => {
         className="bg-white p-5 rounded-lg mb-5 shadow-md flex-row justify-between items-center"
       >
         <View>
-          <Link href="/shop" className="text-lg font-bold">
+          <Link href="/ProTabs/shop" className="text-lg font-bold">
             Visit the EcoStore 🛒
           </Link>
-          <Link href="/shop" className="text-sm text-gray-500">
+          <Link href="/ProTabs/shop" className="text-sm text-gray-500">
             Buy attachments and supplements for your EcoTech. Orders typically arrive in 3 working days.
           </Link>
         </View>
